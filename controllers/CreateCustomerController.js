@@ -5,7 +5,7 @@ export async function createCustomer(req, res){
     const data = req.body;
     const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7];
 
-    await insert_customer(values);
+    await customer_h_min_two.query(insert_customer, values);
     res.json({ status: 'Data berhasil disimpan ke MySQL' });
 }
 
