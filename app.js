@@ -1,4 +1,4 @@
-import express from "express";
+const express = require('express');
 import { createCustomer } from "./controllers/CreateCustomerController";
 
 const app = express();
