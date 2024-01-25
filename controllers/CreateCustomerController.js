@@ -15,7 +15,7 @@ export async function createCustomer(req, res){
     const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7];
 
     const dd = await insertData(values, res);
-    console.log(dd.message);
+
     return dd;
 
 }
