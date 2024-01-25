@@ -1,5 +1,6 @@
 import mysql from 'mysql2';
-require('dotenv').config();
+import dotenv  from "dotenv"
+dotenv.config()
 
 export const customer_h_min_two = mysql.createPool({
     host    : process.env.DB_DASARATA_HOST,
