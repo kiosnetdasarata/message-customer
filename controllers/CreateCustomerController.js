@@ -14,13 +14,6 @@ export async function createCustomer(req, res){
     const data = req.body;
     const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7];
 
-    const dd = await insertData(values, res);
-
-    return dd;
-
-}
-
-function insertData(values, res) {
     customer_h_min_two.query(insert_customer, values, (err, result) => {
         if (err) {
             console.error('Error saat menyimpan data ke MySQL:', err);
@@ -31,6 +24,7 @@ function insertData(values, res) {
         console.log('Data berhasil disimpan ke MySQL');
         res.json({ status: 'Data berhasil disimpan ke MySQL' });
     });
+
 }
 
 // async function insertData(data)
