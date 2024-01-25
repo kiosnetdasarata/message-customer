@@ -26,7 +26,7 @@ const db = mysql.createConnection({
 
 app.use(express.json());
 
-app.post('/api/store-customer', createCustomer);
+app.post('/api/store-customer', [createCustomer]);
 
 // Endpoint untuk menyimpan data ke MySQL
 // app.post('/api/store-customer', (req, res) => {
