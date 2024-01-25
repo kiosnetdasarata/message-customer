@@ -13,7 +13,7 @@ export async function createCustomer(req, res){
 
     const data = req.body;
     const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7];
-
+    console.log(values);
     const dd = await insertData(values);
 
     return dd;
