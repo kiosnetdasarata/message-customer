@@ -16,7 +16,7 @@ export async function createCustomer(req, res){
     console.log(values);
     const dd = await insertData(values);
 
-    return dd;
+    return
 
 }
 
@@ -24,7 +24,7 @@ async function insertData(data)
 {
     try{
         await customer_h_min_two.query(insert_customer, [data]);
-        return {message:"succsss"}
+        // return {message:"succsss"}
     }catch(error){
         console.log(error);
         return {message:"error",code_error: error.errno}
