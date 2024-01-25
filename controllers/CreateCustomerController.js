@@ -23,8 +23,17 @@ export async function createCustomer(req, res){
 async function insertData(data)
 {
     try{
-        await customer_h_min_two.query(insert_customer, [data]);
-        // return {message:"succsss"}
+        // await customer_h_min_two.query(insert_customer, data);
+        customer_h_min_two.query(insert_customer, data, (err, result) => {
+        if (err) {
+            console.error('Error saat menyimpan data ke MySQL:', err);
+            res.status(500).json({ error: 'Gagal menyimpan data ke MySQL' });
+            return;
+        }
+
+        console.log('Data berhasil disimpan ke MySQL');
+        res.json({ status: 'Data berhasil disimpan ke MySQL' });
+    });
     }catch(error){
         console.log(error);
         return {message:"error",code_error: error.errno}
