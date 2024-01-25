@@ -26,7 +26,7 @@ const db = mysql.createConnection({
 
 app.use(express.json());
 
-app.post('/api/store-customer', [createCustomer]);
+app.post('/api/store-customer', createCustomer);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
