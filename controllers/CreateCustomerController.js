@@ -26,6 +26,7 @@ async function insertData(data)
         await customer_h_min_two.query(insert_customer, [data]);
         return {message:"succsss"}
     }catch(error){
+        console.log(error);
         return {message:"error",code_error: error.errno}
     }
 }
