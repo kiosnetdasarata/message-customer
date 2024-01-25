@@ -34,8 +34,8 @@ app.post('/api/store-customer', (req, res) => {
   const data = req.body;
 
   // Query untuk menyimpan data ke tabel tertentu
-  const query = 'INSERT INTO message_customer (id_customer, nama, paket, harga, aktif, expired, no_tlpn, message_h_min_2) VALUES (?, ?)';
-  const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7, data.data8];
+  const query = 'INSERT INTO reminder_min_two (id_customer, nama, paket, harga, aktif, expired, no_tlpn) VALUES (?, ?, ?, ?, ?, ?, ?)';
+  const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7];
 
   // Jalankan query
   db.query(query, values, (err, result) => {
