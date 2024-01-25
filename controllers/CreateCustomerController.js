@@ -15,7 +15,7 @@ export async function createCustomer(req, res){
     const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7];
 
     const dd = await insertData(values);
-
+    console.log(dd.message);
     return dd;
 
 }
@@ -23,17 +23,18 @@ export async function createCustomer(req, res){
 async function insertData(data)
 {
     try{
-        // await customer_h_min_two.query(insert_customer, data);
-        customer_h_min_two.query(insert_customer, data, (err, result) => {
-        if (err) {
-            console.error('Error saat menyimpan data ke MySQL:', err);
-            res.status(500).json({ error: 'Gagal menyimpan data ke MySQL' });
-            return;
-        }
+        await customer_h_min_two.query(insert_customer, data);
+    //     await customer_h_min_two.query(insert_customer, data, (err, result) => {
+    //     if (err) {
+    //         console.error('Error saat menyimpan data ke MySQL:', err);
+    //         res.status(500).json({ error: 'Gagal menyimpan data ke MySQL' });
+    //         return;
+    //     }
 
-        console.log('Data berhasil disimpan ke MySQL');
-        res.json({ status: 'Data berhasil disimpan ke MySQL' });
-    });
+    //     console.log('Data berhasil disimpan ke MySQL');
+    //     res.json({ status: 'Data berhasil disimpan ke MySQL' });
+    // });
+        return {message:"success"}
     }catch(error){
         console.log(error);
         return {message:"error",code_error: error.errno}
