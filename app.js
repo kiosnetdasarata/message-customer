@@ -1,5 +1,5 @@
 const express = require('express');
-import { createCustomer } from "./controllers/CreateCustomerController";
+import { createCustomer } from './controllers/CreateCustomerController';
 
 const app = express();
 const PORT = process.env.PORT_RUNNING;
