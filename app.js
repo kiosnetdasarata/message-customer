@@ -30,8 +30,8 @@ app.post('/api/simpan_data_mysql', (req, res) => {
   const data = req.body;
 
   // Query untuk menyimpan data ke tabel tertentu
-  const query = 'INSERT INTO message_customer (id_customer, message_h_min_2) VALUES (?, ?)';
-  const values = [data.data1, data.data2];
+  const query = 'INSERT INTO message_customer (id_customer, nama, paket, harga, aktif, expired, no_tlpn, message_h_min_2) VALUES (?, ?)';
+  const values = [data.data1, data.data2, data.data3, data.data4, data.data5, data.data6, data.data7, data.data8];
 
   // Jalankan query
   db.query(query, values, (err, result) => {
