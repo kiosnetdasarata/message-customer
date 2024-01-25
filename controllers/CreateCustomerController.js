@@ -1,4 +1,4 @@
-import { insert_customer } from "../query/reminder_query";
+import { insert_customer } from "../query/reminder_query.js";
 
 export async function createCustomer(data){
     try{

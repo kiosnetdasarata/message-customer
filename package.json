@@ -7,5 +7,17 @@
     "mysql2": "^3.8.0",
     "node-cron": "^3.0.3",
     "nodemon": "^3.0.3"
-  }
+  },
+  "name": "message-customer",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
